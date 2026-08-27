@@ -8,10 +8,10 @@ Vector and Matrix operations including eigenvalue/vector calculations and hermit
 
 ## Running
 
-Install dependencies:
+### Install dependencies:
 
 pip install -r requirements.txt
 
-Run:
+### Run:
 
 python main.py
