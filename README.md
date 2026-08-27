@@ -10,7 +10,7 @@ Vector and Matrix operations including eigenvalue/vector calculations and hermit
 
 Install dependencies:
 
-pip install numpy
+pip install -r requirements.txt
 
 Run:
 
