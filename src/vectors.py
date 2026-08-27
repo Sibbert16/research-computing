@@ -17,5 +17,5 @@ def add_vectors(vector1: np.ndarray, vector2: np.ndarray) -> np.ndarray:
     return vector1 + vector2
 
 """Scalar multiplication of a vector"""
-def scalar_multiply(vector: np.ndarray, scalar: float) -> np.ndarray:
-    return vector * scalar
+def scalar_multiply(scalar: float, vector: np.ndarray) -> np.ndarray:
+    return scalar * vector
