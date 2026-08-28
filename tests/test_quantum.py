@@ -56,7 +56,12 @@ def test_hadamard_unitary():
     assert h == True
 
 def test_apply_gate():
-    state = np.array([[1], [0]], dtype=complex)
-    expected = np.array([[0], [1]], dtype=complex)
+    state = basis_zero()
     result = apply_gate(pauli_x(), state)
-    assert np.allclose(result, expected)
+    assert np.allclose(result, basis_one())
+
+def test_hadamard_equal_probabilities():
+    state0 = hadamard() @ basis_zero()
+    state1 = hadamard() @ basis_one()
+    assert np.allclose(measurement_probabilities(state0), [[0.5], [0.5]])
+    assert np.allclose(measurement_probabilities(state1), [[0.5], [0.5]])
