@@ -8,7 +8,6 @@ def basis_zero() -> np.ndarray:
 
 """Returns the |1> computational basis state as a column vector."""
 def basis_one() -> np.ndarray:
-
     return np.array([[0], [1]], dtype=complex)
 
 """Returns a normalised quantum state vector (or an error if the state is the zero vector). """
@@ -38,3 +37,7 @@ def pauli_z() -> np.ndarray:
 """Applies a quantum gate to a quantum state."""
 def apply_gate(gate: np.ndarray, state: np.ndarray) -> np.ndarray:
     return gate @ state 
+
+"""Returns the Hadamard matrix."""
+def hadamard() -> np.ndarray:
+    return np.array([[1, 1], [1, -1]], dtype=complex) / np.sqrt(2)

@@ -8,6 +8,7 @@ from src.quantum import (
     pauli_x,
     pauli_y,
     pauli_z,
+    hadamard,
     apply_gate
 )
 
@@ -49,3 +50,13 @@ def test_pauli_unitary():
     assert x == True
     assert y == True
     assert z == True
+
+def test_hadamard_unitary():
+    h = is_unitary(hadamard())
+    assert h == True
+
+def test_apply_gate():
+    state = np.array([[1], [0]], dtype=complex)
+    expected = np.array([[0], [1]], dtype=complex)
+    result = apply_gate(pauli_x(), state)
+    assert np.allclose(result, expected)
