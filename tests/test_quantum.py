@@ -4,7 +4,16 @@ from src.quantum import (
     basis_zero,
     basis_one,
     normalise_state,
-    measurement_probabilities
+    measurement_probabilities,
+    pauli_x,
+    pauli_y,
+    pauli_z,
+    apply_gate
+)
+
+from src.matrices import (
+    is_hermitian,
+    is_unitary
 )
 
 def test_basis_zero():
@@ -24,3 +33,19 @@ def test_measurement_probabilities():
     state = np.array([[3], [4]], dtype=complex)
     expected = np.array([[0.36], [0.64]], dtype=complex)
     assert np.allclose(measurement_probabilities(state), expected)
+
+def test_pauli_hermitian():
+    x = is_hermitian(pauli_x())
+    y = is_hermitian(pauli_y())
+    z = is_hermitian(pauli_z())
+    assert x == True
+    assert y == True
+    assert z == True
+
+def test_pauli_unitary():
+    x = is_unitary(pauli_x())
+    y = is_unitary(pauli_y())
+    z = is_unitary(pauli_z())
+    assert x == True
+    assert y == True
+    assert z == True
